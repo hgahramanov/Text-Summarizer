@@ -17,7 +17,7 @@ corpus = sent_tokenize(corpus)
 
 bow_docs = pd.DataFrame(counter.fit_transform(corpus).toarray())
 print(bow_docs)
-ldia = LDiA(n_components=5, learning_method='batch')
+ldia = LDiA(n_components=5, learning_method='batch') #n_components parameter represent the number of "topics" documents divided into
 ldia = ldia.fit(bow_docs)
 ldia = pd.DataFrame(ldia.transform(bow_docs))
 print(ldia)
